@@ -14,6 +14,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button[] btnb = new Button[2];
     int[] idsb ={R.id.BTB1, R.id.BTB2};
+    int count =0;
+
+    TextView tv;
 
     Spinner spCoffee1;
     Spinner spCoffee2;
@@ -50,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
+        tv  = (TextView) findViewById(R.id.textView2);
 
         for (int i = 0; i < btn.length; i++) {
             btn[i] = (Button) findViewById(ids[i]);
@@ -101,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position==1)
-                startActivity(new Intent(MainActivity.this,Floor2.class));
+                    startActivity(new Intent(MainActivity.this,Floor2.class));
             }
 
             @Override
@@ -113,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        startTimer();
         for (int i = 0; i < btn.length; i++) {
             if (btn[i] == v)
                 if(state[i]==false) {
@@ -178,6 +187,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startTimer(){
+        Timer T=new Timer();
+        T.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        count++;
+                    }
+                });
+            }
+        }, 1000, 1000);
     }
 }
 

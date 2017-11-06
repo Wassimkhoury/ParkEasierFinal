@@ -36,7 +36,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_map"></activity>
+            android:label="@string/title_activity_map" />
+        <activity android:name=".MainActivity2"></activity>
     </application>
 
 </manifest>

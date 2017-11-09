@@ -19,7 +19,7 @@ import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
+public class floor4 extends AppCompatActivity implements View.OnClickListener {
 
     Button[] btn = new Button[12];
     int[] ids = {R.id.BT1, R.id.BT2, R.id.BT3, R.id.BT4, R.id.BT5, R.id.BT6, R.id.BT7, R.id.BT8, R.id.BT9, R.id.BT10, R.id.BT11, R.id.BT12};
@@ -54,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_floor4);
 
 
         tv  = (TextView) findViewById(R.id.textView2);
@@ -109,7 +109,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position==1)
-                    startActivity(new Intent(MainActivity2.this,floor4.class));
+                    startActivity(new Intent(floor4.this,MainActivity2.class));
             }
 
             @Override

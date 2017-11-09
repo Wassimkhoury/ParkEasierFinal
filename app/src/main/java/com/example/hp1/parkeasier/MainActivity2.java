@@ -3,6 +3,7 @@ package com.example.hp1.parkeasier;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -130,7 +131,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btn[i].setBackgroundColor(Color.GREEN);
+                    btn[i].setBackgroundColor(getResources().getColor(R.color.green));
                     btn[i].setText("empty");
                 }
         }
@@ -142,7 +143,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btnp[i].setBackgroundColor(Color.BLUE);//getResources().getColor(Color.MAGENTA)
+                    btnp[i].setBackgroundColor(getResources().getColor(R.color.purple));
                     btnp[i].setText("empty");
 
                 }
@@ -156,7 +157,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btnb[i].setBackgroundColor(Color.BLUE);
+                    btnb[i].setBackgroundColor(getResources().getColor(R.color.blue));
                     btnb[i].setText("empty");
                 }
         }

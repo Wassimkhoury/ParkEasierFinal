@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btn[i].setBackgroundColor(Color.GREEN);
+                    btn[i].setBackgroundColor(getResources().getColor(R.color.green));
                     btn[i].setText("empty");
                 }
             }
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btnp[i].setBackgroundColor(Color.BLUE);//getResources().getColor(Color.MAGENTA)
+                    btnp[i].setBackgroundColor(getResources().getColor(R.color.purple));
                     btnp[i].setText("empty");
 
                 }
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btnb[i].setBackgroundColor(Color.BLUE);
+                    btnb[i].setBackgroundColor(getResources().getColor(R.color.purple));
                     btnb[i].setText("empty");
                 }
         }

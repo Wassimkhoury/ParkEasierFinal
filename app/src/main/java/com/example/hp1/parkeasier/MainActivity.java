@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     state[i] = true;
                 } else{
                     state[i] = false;
-                    btnb[i].setBackgroundColor(getResources().getColor(R.color.purple));
+                    btnb[i].setBackgroundColor(getResources().getColor(R.color.blue));
                     btnb[i].setText("empty");
                 }
         }

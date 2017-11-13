@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/was"
     android:orientation="horizontal"
-    tools:context="com.example.hp1.parkeasier.MainActivity"
+    tools:context="com.example.hp1.parkeasier.Floor2"
     android:weightSum="1">
 
     <LinearLayout

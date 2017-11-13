@@ -45,7 +45,7 @@ public class floor4 extends AppCompatActivity implements View.OnClickListener {
 
     String[] spList = {"None", "disablity", "pregnant"};
     String[] spList2 = {"None", "Gym", "shopping",};
-    String[] spList3 = {"floor1", "floor2"};
+    String[] spList3 = {"floor2", "floor1"};
 
     boolean flag1=false;
 

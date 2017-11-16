@@ -9,10 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,10 +25,12 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button[] btn = new Button[12];
-    int[] ids = {R.id.BT1, R.id.BT2, R.id.BT3, R.id.BT4, R.id.BT5, R.id.BT6, R.id.BT7, R.id.BT8, R.id.BT9, R.id.BT10, R.id.BT11, R.id.BT12};
+    Button[] btn = new Button[11];
+    int[] ids = { R.id.BT2, R.id.BT3, R.id.BT4, R.id.BT5, R.id.BT6, R.id.BT7, R.id.BT8, R.id.BT9, R.id.BT10, R.id.BT11, R.id.BT12};
 
-    boolean[] state = {false, false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
+    ImageButton bt1;
+
+    boolean[] state = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
 
     Button[] btnp = new Button[2];
     int[] idsp ={R.id.BTP1, R.id.BTP2};
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        bt1 = (ImageButton) findViewById(R.id.BT1);
         tv  = (TextView) findViewById(R.id.textView2);
 
         for (int i = 0; i < btn.length; i++) {
@@ -81,7 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if(position==1){
-                    ImageView w = (ImageView)findViewById(R.id.)
+                   // ImageView w = (ImageView)findViewById();
+                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+                    bt1.startAnimation(animation);
                 }
 
             }

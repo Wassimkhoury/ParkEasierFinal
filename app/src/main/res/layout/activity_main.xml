@@ -23,7 +23,8 @@
             android:id="@+id/spCoffee1"
             android:layout_margin="5dp" />
 
-        <Button
+
+        <ImageButton
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -123,7 +124,7 @@
 
         <Button
             android:background="@android:color/holo_green_light"
-            android:layout_width="141dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/BT8"
             android:hint="empty"
@@ -131,7 +132,7 @@
 
         <Button
             android:background="@android:color/holo_green_light"
-            android:layout_width="149dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/BT9"
             android:hint="empty"

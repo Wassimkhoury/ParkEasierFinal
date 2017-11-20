@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                if(position==1){
-                   // ImageView w = (ImageView)findViewById();
+                while (position==1){
+                   //ImageView w = (ImageView)findViewById();
                     Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
                     bt1.startAnimation(animation);
                 }

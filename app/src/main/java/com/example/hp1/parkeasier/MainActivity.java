@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -15,15 +16,18 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button[] btn = new Button[11];
     int[] ids = { R.id.BT2, R.id.BT3, R.id.BT4, R.id.BT5, R.id.BT6, R.id.BT7, R.id.BT8, R.id.BT9, R.id.BT10, R.id.BT11, R.id.BT12};
@@ -45,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Spinner spCoffee2;
     Spinner spCoffee3;
 
+    private long timeWhenStopped = 0;
+    private boolean stopClicked;
+    private Chronometer chronometer;
+
+
     Adapter adapter3;
     Adapter adapter2;
     Adapter adapter1;
@@ -61,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        chronometer = (Chronometer) findViewById(R.id.chronometer);
 
         bt1 = (ImageButton) findViewById(R.id.BT1);
         tv  = (TextView) findViewById(R.id.textView2);
@@ -133,17 +144,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        startTimer();
+
         for (int i = 0; i < btn.length; i++) {
             if (btn[i] == v)
                 if(state[i]==false) {
                     btn[i].setBackgroundColor(Color.RED);
                     btn[i].setText("full");
                     state[i] = true;
+                    startButtonClick(v);
                 } else{
                     state[i] = false;
                     btn[i].setBackgroundColor(getResources().getColor(R.color.green));
                     btn[i].setText("empty");
+                    stopButtonClick(v);
+
                 }
             }
         for (int i = 0; i < btnp.length; i++) {
@@ -152,10 +166,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnp[i].setBackgroundColor(Color.RED);
                     btnp[i].setText("full");
                     state[i] = true;
+                    startButtonClick(v);
                 } else{
                     state[i] = false;
                     btnp[i].setBackgroundColor(getResources().getColor(R.color.purple));
                     btnp[i].setText("empty");
+                    stopButtonClick(v);
 
                 }
         }
@@ -166,10 +182,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnb[i].setBackgroundColor(Color.RED);
                     btnb[i].setText("full");
                     state[i] = true;
+                    startButtonClick(v);
                 } else{
                     state[i] = false;
                     btnb[i].setBackgroundColor(getResources().getColor(R.color.blue));
                     btnb[i].setText("empty");
+                    stopButtonClick(v);
                 }
         }
         }
@@ -201,21 +219,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    public void startTimer(){
-        Timer T=new Timer();
-        T.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        count++;
-                    }
-                });
-            }
-        }, 1000, 1000);
+    public void startButtonClick(View v) {
+        chronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
+        chronometer.start();
+        stopClicked = false;
+
     }
+
+    // the method for when we press the 'stop' button
+    public void stopButtonClick(View v){
+        if (!stopClicked)  {
+            timeWhenStopped = chronometer.getBase() - SystemClock.elapsedRealtime();
+            int seconds = (int) timeWhenStopped / 1000;
+            chronometer.stop();
+            stopClicked = true;
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            timeWhenStopped = 0;
+
+        }
+    }
+    public void ticketprice(){
+        AlertDialog.Builder Builder = new AlertDialog.Builder(this);
+        Builder.setTitle("ticketprice");
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        System.out.println( sdf.format(cal.getTime()) );
+        int x=(cal.gethour*20);
+        Builder.setMessage("your ticketprice is"+x+"shekels" );
+
+
+        Builder.setPositiveButton("Done",new DialogInterface.OnClickListener(){
+
+            public void onClick(DialogInterface dialog,int which){
+
+            }
+
+
+        });
+        AlertDialog ad=Builder.create();
+        ad.show();
+
+
+    }
+
+
 }
 

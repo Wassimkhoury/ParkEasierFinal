@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -79,6 +81,15 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         spCoffee1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+                if(position==1){
+                    for(int i=0;i<btnb.length;i++)
+                        btnb[i].startAnimation(animation);
+                }
+                if(position==2){
+                    for(int i=0;i<btnp.length;i++)
+                        btnp[i].startAnimation(animation);
+                }
 
             }
 
@@ -94,6 +105,16 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         spCoffee2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+                if(position==1){
+                    for(int i=7;i<btn.length;i++)
+                        btn[i].startAnimation(animation);
+                }
+                if(position==2){
+                    for(int i=0;i<7;i++)
+                        btn[i].startAnimation(animation);
+                }
+
 
             }
 

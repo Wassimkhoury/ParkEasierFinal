@@ -27,12 +27,17 @@ import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.example.hp1.parkeasier.R.id.BT10;
+import static com.example.hp1.parkeasier.R.id.BT11;
+import static com.example.hp1.parkeasier.R.id.BT12;
+import static com.example.hp1.parkeasier.R.id.BT7;
+import static com.example.hp1.parkeasier.R.id.BT8;
+import static com.example.hp1.parkeasier.R.id.BT9;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button[] btn = new Button[11];
-    int[] ids = { R.id.BT2, R.id.BT3, R.id.BT4, R.id.BT5, R.id.BT6, R.id.BT7, R.id.BT8, R.id.BT9, R.id.BT10, R.id.BT11, R.id.BT12};
-
-    ImageButton bt1;
+    int[] ids = {R.id.BT1 ,R.id.BT2, R.id.BT3, R.id.BT4, R.id.BT5, R.id.BT6, BT7, BT8, BT9, BT10, BT11, BT12};
 
     boolean[] state = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
 
@@ -73,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         chronometer = (Chronometer) findViewById(R.id.chronometer);
 
-        bt1 = (ImageButton) findViewById(R.id.BT1);
+
         tv  = (TextView) findViewById(R.id.textView2);
 
         for (int i = 0; i < btn.length; i++) {
@@ -95,12 +100,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spCoffee1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                while (position==1){
-                   //ImageView w = (ImageView)findViewById();
-                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-                    bt1.startAnimation(animation);
+                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+                if(position==1){
+                    for(int i=0;i<btnb.length;i++)
+                        btnb[i].startAnimation(animation);
                 }
+                if(position==2){
+                    for(int i=0;i<btnp.length;i++)
+                        btnp[i].startAnimation(animation);
+                }
+
 
             }
 
@@ -116,6 +125,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spCoffee2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+                if(position==1){
+                    for(int i=7;i<btn.length;i++)
+                        btn[i].startAnimation(animation);
+                }
+                if(position==2){
+                    for(int i=0;i<7;i++)
+                        btn[i].startAnimation(animation);
+                }
 
             }
 
@@ -244,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         System.out.println( sdf.format(cal.getTime()) );
-        int x=(cal.gethour*20);
+        int x=(cal.HOUR*20);
         Builder.setMessage("your ticketprice is"+x+"shekels" );
 
 
@@ -257,6 +275,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         });
         AlertDialog ad=Builder.create();
+
+
+
+
+
         ad.show();
 
 

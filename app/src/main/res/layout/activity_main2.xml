@@ -41,7 +41,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT3"
+            android:id="@+id/BT1"
             android:hint="empty"
             android:layout_marginTop="14dp" />
 
@@ -49,7 +49,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT4"
+            android:id="@+id/BT2"
             android:hint="empty"
             android:layout_marginTop="11dp" />
 
@@ -57,7 +57,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT5"
+            android:id="@+id/BT3"
             android:hint="empty"
             android:layout_marginTop="13dp" />
 
@@ -65,7 +65,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT6"
+            android:id="@+id/BT4"
             android:hint="empty"
             android:layout_marginTop="15dp" />
 
@@ -73,15 +73,15 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT8"
             android:hint="empty"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:id="@+id/BT5" />
 
         <Button
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT7"
+            android:id="@+id/BT6"
             android:hint="empty"
             android:layout_marginTop="10dp" />
 
@@ -139,7 +139,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="149dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BT9"
+            android:id="@+id/BT7"
             android:hint="empty"
             android:layout_marginTop="12dp" />
 
@@ -147,7 +147,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="133dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BT10"
+            android:id="@+id/BT8"
             android:hint="empty"
             android:layout_marginTop="12dp" />
 
@@ -155,7 +155,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT11"
+            android:id="@+id/BT9"
             android:hint="empty"
             android:layout_marginTop="14dp" />
 
@@ -163,7 +163,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT12"
+            android:id="@+id/BT10"
             android:hint="empty"
             android:layout_marginTop="10dp" />
 
@@ -171,7 +171,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT1"
+            android:id="@+id/BT11"
             android:hint="empty"
             android:layout_marginTop="15dp" />
 
@@ -179,7 +179,7 @@
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BT2"
+            android:id="@+id/BT12"
             android:hint="empty"
             android:layout_marginTop="10dp" />
 

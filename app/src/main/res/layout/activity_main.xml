@@ -24,7 +24,7 @@
             android:layout_margin="5dp" />
 
 
-        <ImageButton
+        <Button
             android:background="@android:color/holo_green_light"
             android:layout_width="match_parent"
             android:layout_height="50dp"

@@ -19,6 +19,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -36,7 +38,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     int[] idsb ={R.id.BTB1, R.id.BTB2};
     int count =0;
 
-    TextView tv;
+
 
     Spinner spCoffee1;
     Spinner spCoffee2;
@@ -60,7 +62,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_main2);
 
 
-        tv  = (TextView) findViewById(R.id.textView2);
+
 
         for (int i = 0; i < btn.length; i++) {
             btn[i] = (Button) findViewById(ids[i]);
@@ -143,7 +145,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        startTimer();
+
         for (int i = 0; i < btn.length; i++) {
             if (btn[i] == v)
                 if(state[i]==false) {
@@ -211,21 +213,23 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         return super.onOptionsItemSelected(item);
     }
 
-    public void startTimer(){
-        Timer T=new Timer();
-        T.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        count++;
-                    }
-                });
+    public void ticketprice(){
+        AlertDialog.Builder Builder = new AlertDialog.Builder(this);
+        Builder.setTitle("ticketprice");
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        System.out.println( sdf.format(cal.getTime()) );
+        int x=(cal.HOUR*20);
+        Builder.setMessage("your ticketprice is"+x+"shekels" );
+
+
+        Builder.setPositiveButton("Done",new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+
             }
-        }, 1000, 1000);
+        });
     }
+
 }
 

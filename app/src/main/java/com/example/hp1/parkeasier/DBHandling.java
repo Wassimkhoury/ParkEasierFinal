@@ -109,10 +109,10 @@ String query = " CREATE TABLE " + TABLE_RATE
             for(int i=0;i<col.length;i++){
                 r[i]=c.getString(col[i]);
             }
-            rates.add(new Rate(double(r[3]),r[2],r[1],Long.parseLong(r[0]),int(r[4]),int(r[5])));
+            rates.add(new Rate((long) Double.parseDouble(r[3]),r[2],r[1],Long.parseLong(r[0]),Integer.parseInt(r[4]),Integer.parseInt(r[5])));
             c.moveToNext();
         }
-        return alc;
+        return rates;
     }
 
 }

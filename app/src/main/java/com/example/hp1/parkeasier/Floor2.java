@@ -17,6 +17,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class Floor2 extends AppCompatActivity implements View.OnClickListener {
 
     Button[] btn = new Button[12];
@@ -199,5 +202,20 @@ public class Floor2 extends AppCompatActivity implements View.OnClickListener {
 
         return super.onOptionsItemSelected(item);
     }
+    public void ticketprice(){
+        AlertDialog.Builder Builder = new AlertDialog.Builder(this);
+        Builder.setTitle("ticketprice");
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        System.out.println( sdf.format(cal.getTime()) );
+        int x=(cal.HOUR*20);
+        Builder.setMessage("your ticketprice is"+x+"shekels" );
+
+
+        Builder.setPositiveButton("Done",new DialogInterface.OnClickListener(){
+
+            public void onClick(DialogInterface dialog,int which){
+
+            }});}
 }
 

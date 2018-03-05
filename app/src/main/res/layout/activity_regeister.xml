@@ -31,10 +31,11 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/et4"
+            android:hint="car number"
             android:layout_weight="0.06" />
 
         <Button
-            android:text="bt1"
+            android:text="regeister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button2"

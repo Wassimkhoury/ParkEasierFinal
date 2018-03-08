@@ -15,6 +15,7 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -229,11 +230,10 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     }
 
     public void startButtonClick(View v) {
-        chronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
-        chronometer.start();
-        scheduleNotification(this,3600000,1);
-        stopClicked = false;
-
+            chronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
+            chronometer.start();
+            scheduleNotification(this, 3600000, 1);
+            stopClicked = false;
     }
 
     // the method for when we press the 'stop' button

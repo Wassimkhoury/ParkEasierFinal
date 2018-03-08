@@ -28,10 +28,18 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/et4"
+            android:inputType="textWebEmailAddress"
+            android:id="@+id/etMail"
             android:hint="car number"
+            android:layout_weight="0.06" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/etPassword"
             android:layout_weight="0.06" />
 
         <Button

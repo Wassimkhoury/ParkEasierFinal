@@ -21,7 +21,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     EditText et2;
     TextView tv1;
     EditText et3;
-    Button bt3;
+    Button bt3,btSignIn;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -32,10 +32,13 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
         bt3 = (Button) findViewById(R.id.bt3);
+        btSignIn = (Button) findViewById(R.id.btSignIn);
         et2 = (EditText) findViewById(R.id.et2);
         et3 = (EditText) findViewById(R.id.et3);
         tv1 = (TextView) findViewById(R.id.tv1);
         bt3.setOnClickListener(this);
+        btSignIn.setOnClickListener(this);
+
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -67,13 +70,13 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     }
     @Override
     public void onClick(View v) {
-        if(v==bt3)
-            signIn(et2.getText().toString(), et3.getText().toString());
-        else
-        {
+        if(v==btSignIn){
             Intent i = new Intent(LogInActivity.this, Regeister.class);
             startActivity(i);
         }
+        if(v==bt3)
+            if(!et2.getText().toString().equals("") && !et3.getText().toString().equals(""))
+                signIn(et2.getText().toString(), et3.getText().toString());
 
     }
     public void signIn(String email, String password){

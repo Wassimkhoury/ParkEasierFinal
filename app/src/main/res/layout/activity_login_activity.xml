@@ -12,6 +12,13 @@
     android:orientation="horizontal"
     tools:context="com.example.hp1.parkeasier.LogInActivity">
 
+    <TextView
+        android:text="Sign up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_weight="1" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -61,7 +68,7 @@
             style="@style/Button" />
 
         <Button
-            android:text="Sign In"
+            android:text="Sign up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btSignIn"

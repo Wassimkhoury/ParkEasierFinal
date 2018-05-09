@@ -41,15 +41,15 @@ public class DBHandling extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-String query = " CREATE TABLE " + TABLE_RATE
-        + "(" + COL_ID + " INTGER PRIMARY KEY AUTOINCREMENT, "
-        + COL_CARNUM + " TEXT, "
-        + COL_DATE + " TEXT, "
-        + COL_RATE + " REAL, "
-        + COL_PARKINPNUM + " INTEGER, "
-        + COL_FLOORNUM + " INTEGER "
-        +");";
-    Log.d("QUERY",query);
+        String query = " CREATE TABLE " + TABLE_RATE
+                + "(" + COL_ID + " INTGER PRIMARY KEY AUTOINCREMENT, "
+                + COL_CARNUM + " TEXT, "
+                + COL_DATE + " TEXT, "
+                + COL_RATE + " REAL, "
+                + COL_PARKINPNUM + " INTEGER, "
+                + COL_FLOORNUM + " INTEGER "
+                +");";
+        Log.d("QUERY",query);
         try {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_RATE);
             db.execSQL(query);

@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 /**
  * Created by Hp1 on 05/03/2018.
@@ -23,5 +24,7 @@ public class MyNotificationPublisher extends BroadcastReceiver {
         Notification notification = intent.getParcelableExtra(NOTIFICATION);
         int notificationId = intent.getIntExtra(NOTIFICATION_ID, 0);
         notificationManager.notify(notificationId, notification);
+
+        Toast.makeText(context, "Inside notification ",Toast.LENGTH_SHORT).show();
     }
 }

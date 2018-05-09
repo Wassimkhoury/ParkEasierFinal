@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         chronometer = (Chronometer) findViewById(R.id.chronometer);
-
-
         for (int i = 0; i < btn.length; i++) {
             btn[i] = (Button) findViewById(ids[i]);
             btn[i].setOnClickListener(this);
@@ -235,9 +233,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void startButtonClick(View v) {
+        scheduleNotification(this,5000,1);
         chronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
         chronometer.start();
-        scheduleNotification(this,3600000,1);
         stopClicked = false;
 
     }
@@ -281,12 +279,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setContentTitle(context.getString(R.string.title))
                 .setContentText(context.getString(R.string.content))
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.parkingq)
-                .setLargeIcon(((BitmapDrawable) context.getResources().getDrawable(R.drawable.parkingq)).getBitmap())
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setLargeIcon(((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_launcher)).getBitmap())
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
-        Intent intent = new Intent(context, TestActivity.class);
+        Intent intent = new Intent(context, MainActivity.class);
         PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(activity);
 

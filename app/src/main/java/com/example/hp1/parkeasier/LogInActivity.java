@@ -1,7 +1,15 @@
 package com.example.hp1.parkeasier;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.RingtoneManager;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,6 +64,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             }
         };
     }
+
+
     @Override
     public void onStart() {
         super.onStart();

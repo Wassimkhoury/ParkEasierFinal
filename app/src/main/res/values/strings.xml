@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ParkEasier</string>
     <string name="title_activity_map">Map</string>
-    <string name="title">Notification Title</string>
-    <string name="content">Notification Content</string>
+    <string name="title">ParkEasier</string>
+    <string name="content">your car is in the parking spot for 1 hour</string>
 </resources>

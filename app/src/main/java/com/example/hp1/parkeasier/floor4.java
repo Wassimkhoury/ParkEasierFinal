@@ -225,7 +225,7 @@ public class floor4 extends AppCompatActivity implements View.OnClickListener {
     public void startButtonClick(View v) {
         chronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
         chronometer.start();
-        scheduleNotification(this,3600000,1);
+        scheduleNotification(this,5000,1);
         stopClicked = false;
 
     }
@@ -269,12 +269,11 @@ public class floor4 extends AppCompatActivity implements View.OnClickListener {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setContentTitle(context.getString(R.string.title))
                 .setContentText(context.getString(R.string.content))
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.parkingq)
-                .setLargeIcon(((BitmapDrawable) context.getResources().getDrawable(R.drawable.parkingq)).getBitmap())
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setLargeIcon(((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_launcher)).getBitmap())
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
-        Intent intent = new Intent(context, TestActivity.class);
+        Intent intent = new Intent(context, floor4.class);
         PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(activity);
 
